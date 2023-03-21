@@ -1,8 +1,8 @@
-import { createContext, useState, useEffect, Children } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const TimerContext = createContext();
 
-const INIT_TIMER = 15;
+const INIT_TIMER = 60;
 
 const TimerContextProvider = ({ children }) => {
   const [timer, setTimer] = useState(false);

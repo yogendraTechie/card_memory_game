@@ -1,0 +1,16 @@
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score > span {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--primaryGreen);
+  font-weight: 600;
+}
+
+.score > span:last-child {
+  margin-left: 0.5rem;
+}

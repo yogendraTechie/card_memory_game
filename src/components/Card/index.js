@@ -1,15 +1,16 @@
 import styles from "./Card.module.css";
 
-const Card = ({ data, setSelectedPair }) => {
+const Card = ({ card, setSelectedPair }) => {
+  const { disable, visibility, avatar_url } = card;
+  const classes = disable ? styles.card_disable : styles.card;
   return (
     <div
-      className={styles.card}
+      className={classes}
       onClick={() =>
-        !data?.disable &&
-        setSelectedPair((selectedPair) => [...selectedPair, data])
+        !disable && setSelectedPair((selectedPair) => [...selectedPair, card])
       }
     >
-      {data?.visibility ? <img src={data?.avatar_url} alt="avatar" /> : null}
+      {visibility ? <img src={avatar_url} alt="avatar" /> : null}
     </div>
   );
 };

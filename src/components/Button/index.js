@@ -1,6 +1,8 @@
-const Button = ({ title, classes, action }) => {
+import styles from "./Button.module.css";
+
+const Button = ({ title, action, classes }) => {
   return (
-    <button className={classes} onClick={action}>
+    <button className={`${classes} ${styles.button}`} onClick={action}>
       {title}
     </button>
   );

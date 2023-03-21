@@ -1,11 +1,8 @@
 :root {
   --primaryGreen: #495e57;
-  --primaryYellow: #f4ce14;
-  --secondaryRed: #ee9972;
-  --secondaryPink: #fbdabb;
-  --secondaryBlue: #edefee;
-  --secondaryGray: #333333;
+  --secondaryGray: #00000073;
   --black: #000;
+  --white: #fff;
 }
 
 * {
@@ -15,7 +12,9 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 16px;
+  color: var(--primaryGreen);
+  position: relative;
 }
 
 body {
@@ -58,32 +57,4 @@ a:hover {
 
 p {
   margin-bottom: 2.4rem;
-}
-
-label {
-  display: block;
-  font-family: "Markazi Text", serif;
-  font-weight: 700;
-}
-
-.form {
-  margin-bottom: 2.4rem;
-  max-width: 30rem;
-}
-
-.form-group {
-  margin-bottom: 2.4rem;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="number"],
-select {
-  border: 1px solid #333;
-  width: 100%;
-  padding: 1.2rem;
-}
-
-.error {
-  color: red;
 }

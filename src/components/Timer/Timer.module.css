@@ -1,0 +1,16 @@
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer > span {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--primaryGreen);
+  font-weight: 600;
+}
+
+.timer > span:last-child {
+  margin-left: 0.5rem;
+}

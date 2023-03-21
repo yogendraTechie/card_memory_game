@@ -31,7 +31,7 @@ export const cardReducer = (state, action) => {
       return {
         ...state,
         selectedCards: [
-          ...state.selectedCards.map((card) => {
+          ...state.selectedCards?.map((card) => {
             card["disable"] = false;
             return card;
           }),

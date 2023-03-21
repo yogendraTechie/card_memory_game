@@ -1,8 +1,20 @@
 .mainContainer {
   width: 50%;
-  min-height: 500px;
-  margin: 40px auto;
-  border: 1px solid var(--black);
+  margin: auto;
+  border: 2px solid var(--black);
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+@media (max-width: 1200px) {
+  .mainContainer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    width: 100%;
+  }
 }

@@ -7,14 +7,14 @@ import { TimerContext } from "../../context/TimerContext";
 const ScoreBoard = () => {
   const { timer } = useContext(TimerContext);
   return (
-    <>
+    <div className={styles.scoreBoard}>
       {timer ? (
-        <div className={styles.scoreBoard}>
+        <div className={styles.container}>
           <Timer />
           <Score />
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 

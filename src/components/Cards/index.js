@@ -19,7 +19,7 @@ const Cards = () => {
       let updatedCards = [];
       let id = selectedPair[selectedPair.length - 1].uniqueId;
       updatedCards = selectedCards?.map((card) => {
-        if (card?.uniqueId == id) {
+        if (card?.uniqueId === id) {
           card["visibility"] = true;
           card["disable"] = true;
         }
@@ -27,7 +27,7 @@ const Cards = () => {
       });
 
       if (selectedPair?.length > 1) {
-        if (selectedPair[0].id == selectedPair[1].id) {
+        if (selectedPair[0].id === selectedPair[1].id) {
           setScore((score) => score + 100);
           setSelectedPair([]);
         } else {
@@ -38,8 +38,8 @@ const Cards = () => {
           setTimeout(() => {
             updatedCards = selectedCards?.map((card) => {
               if (
-                card?.uniqueId == selectedPair[0].uniqueId ||
-                card?.uniqueId == selectedPair[1].uniqueId
+                card?.uniqueId === selectedPair[0].uniqueId ||
+                card?.uniqueId === selectedPair[1].uniqueId
               ) {
                 card["visibility"] = false;
               }
@@ -48,7 +48,7 @@ const Cards = () => {
             });
             setSelectedPair([]);
             res(updatedCards);
-          }, 1000);
+          }, 800);
         }
       }
       dispatch({ type: "UPDATE", payload: updatedCards });
@@ -59,16 +59,16 @@ const Cards = () => {
     if (selectedPair?.length) {
       updateBoard();
     }
-  }, [selectedPair, dispatch, setSelectedPair]);
+  }, [selectedPair]);
 
   const cardsEle = useMemo(() => {
     if (isLoading) return <Loader />;
     if (selectedCards?.length)
-      return selectedCards.map((ele, i) => {
-        return <Card key={i} data={ele} setSelectedPair={setSelectedPair} />;
+      return selectedCards.map((card, i) => {
+        return <Card key={i} card={card} setSelectedPair={setSelectedPair} />;
       });
     return null;
-  }, [selectedCards, setSelectedPair]);
+  }, [isLoading, selectedCards, setSelectedPair]);
 
   return <div className={styles.cards}>{cardsEle}</div>;
 };

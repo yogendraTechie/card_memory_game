@@ -1,4 +1,10 @@
-import React, { createContext, useReducer, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useReducer,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import { cardReducer } from "../reducers/cardReducer";
 import axios from "axios";
 
@@ -32,7 +38,7 @@ const CardsContextProvider = ({ children }) => {
     fetchCardData();
   }, []);
 
-  const handleSuffleCards = () => {
+  const handleSuffleCards = useCallback(() => {
     dispatch({
       type: "SHUFFLE",
       payload: {
@@ -40,19 +46,19 @@ const CardsContextProvider = ({ children }) => {
         playingCardsNumber: PLAYING_CARDS_NUMBER,
       },
     });
-  };
+  }, [state.allCards, dispatch]);
 
   useEffect(() => {
     if (state.allCards?.length) {
       handleSuffleCards();
     }
-  }, [state.allCards]);
+  }, [state.allCards, handleSuffleCards]);
 
   useEffect(() => {
     if (reset) {
       handleSuffleCards();
     }
-  }, [reset]);
+  }, [reset, handleSuffleCards]);
 
   return (
     <CardsContext.Provider value={{ state, dispatch, setReset }}>
