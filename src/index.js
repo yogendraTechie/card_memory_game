@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
+import { TimerContextProvider } from "./context/TimerContext";
+import { ScoreContextProvider } from "./context/ScoreContext";
+import { CardsContextProvider } from "./context/CardsContext";
+import { composeProviders } from "./utils/composeProviders";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const Provider = composeProviders([
+  Router,
+  TimerContextProvider,
+  ScoreContextProvider,
+  CardsContextProvider,
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
