@@ -6,7 +6,6 @@ import React, {
   useCallback,
 } from "react";
 import { cardReducer } from "../reducers/cardReducer";
-import axios from "axios";
 
 export const CardsContext = createContext();
 
@@ -27,8 +26,9 @@ const CardsContextProvider = ({ children }) => {
   const fetchCardData = async () => {
     try {
       dispatch({ type: "FETCH_START" });
-      const response = await axios.get(END_POINT);
-      dispatch({ type: "FETCH_SUCCESS", payload: response.data });
+      const responseJson = await fetch(END_POINT);
+      const response = await responseJson.json();
+      dispatch({ type: "FETCH_SUCCESS", payload: response });
     } catch (error) {
       dispatch({ type: "FETCH_ERROR", payload: error });
     }
