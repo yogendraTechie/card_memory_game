@@ -40,7 +40,7 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 
 ## Step 2
 
-Other than React we are using react-router-dom (https://www.npmjs.com/package/react-router-dom).
+Other than React we are using react-router-dom (https://www.npmjs.com/package/react-router-dom) and prop-types (https://www.npmjs.com/package/prop-types) libraries.
 
 # Where to find your code
 
