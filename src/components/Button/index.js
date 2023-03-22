@@ -2,7 +2,11 @@ import styles from "./Button.module.css";
 
 const Button = ({ title, action, classes }) => {
   return (
-    <button className={`${classes} ${styles.button}`} onClick={action}>
+    <button
+      data-testid="button"
+      className={`${classes} ${styles.button}`}
+      onClick={action}
+    >
       {title}
     </button>
   );
