@@ -34,7 +34,7 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 
 Other than React we are using react-router-dom (https://www.npmjs.com/package/react-router-dom) and axios (https://www.npmjs.com/package/axios).
 
-# Where to find your code
+# Where to find code
 
 App code can be found on github (https://github.com/yogendraTechie/card_memory_game)
 
