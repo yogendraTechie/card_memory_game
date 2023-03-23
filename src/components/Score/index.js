@@ -6,8 +6,8 @@ const Score = () => {
   const { score } = useContext(ScoreContext);
   return (
     <div className={styles.score}>
-      <span>Score: </span>
-      <span>{score}</span>
+      <span data-testid="score-label">Score: </span>
+      <span data-testid="score-value">{score}</span>
     </div>
   );
 };

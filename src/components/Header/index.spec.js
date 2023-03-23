@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import Header from ".";
 
 describe("Header", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Header />);
+    const { baseElement } = render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
     expect(baseElement).toBeInTheDocument();
   });
 

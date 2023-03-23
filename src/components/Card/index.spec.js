@@ -1,13 +1,16 @@
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import Card from ".";
 
 describe("Card", () => {
   const setup = () =>
     render(
-      <Card
-        setSelectedPair={() => {}}
-        card={{ disable: false, visibility: true, avatar_url: "" }}
-      />
+      <MemoryRouter>
+        <Card
+          setSelectedPair={() => {}}
+          card={{ disable: false, visibility: true, avatar_url: "" }}
+        />
+      </MemoryRouter>
     );
 
   it("should render successfully", () => {

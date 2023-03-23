@@ -6,8 +6,8 @@ const Timer = () => {
   const { remainingTime } = useContext(TimerContext);
   return (
     <div className={styles.timer}>
-      <span>Timer: </span>
-      <span>{remainingTime} Seconds</span>
+      <span data-testid="timer-label">Timer: </span>
+      <span data-testid="timer-value">{remainingTime} Seconds</span>
     </div>
   );
 };
