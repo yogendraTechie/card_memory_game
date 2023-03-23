@@ -2,15 +2,21 @@ import { render, screen } from "@testing-library/react";
 import Card from ".";
 
 describe("Card", () => {
-  it("should render successfully", () => {
-    const { baseElement } = render(
-      <Card card={{ disable: "", visibility: "", avatar_url: "" }} />
+  const setup = () =>
+    render(
+      <Card
+        setSelectedPair={() => {}}
+        card={{ disable: false, visibility: true, avatar_url: "" }}
+      />
     );
+
+  it("should render successfully", () => {
+    const { baseElement } = setup();
     expect(baseElement).toBeInTheDocument();
   });
 
   it("should render the card image", () => {
-    render(<Card card={{ disable: "", visibility: true, avatar_url: "" }} />);
+    setup();
     expect(screen.getByAltText("avatar")).toBeInTheDocument();
   });
 });
