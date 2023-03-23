@@ -48,7 +48,7 @@ const Cards = () => {
             });
             setSelectedPair([]);
             res(updatedCards);
-          }, 800);
+          }, 1200);
         }
       }
       dispatch({ type: "UPDATE", payload: updatedCards });
